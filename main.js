@@ -53,3 +53,24 @@ document.getElementById('btnRoll').addEventListener('click',()=>{
         player === 1 ? roundP1.innerHTML = roundPlayer1 : roundPlayer2.innerHTML = roundPlayer2
 })
 
+//function hold
+
+    document.getElementById('btnHold').addEventListener('click',()=>{
+        player === 1 ? globalPlayer1 += roundPlayer1 : globalPlayer2 += roundPlayer2
+        roundPlayer1 === 0
+        roundPlayer2 === 0
+        player === 1 ? scoreP1.innerHTML = globalPlayer1 : scoreP2.innerHTML = globalPlayer2
+        nextPlayer()
+        //function win
+        if(globalPlayer1 >= 100){
+            alert('Joueur 1 a gagné')
+        }
+        if(globalPlayer2 >= 100){
+            alert('Joueur 2  a gagné')
+        }
+    })
+// function new game 
+
+document.getElementById('btnNew').addEventListener('click',()=>{
+    document.location.reload()
+})
